@@ -1,0 +1,30 @@
+Apple: 50: 0.99
+Banana: 30: 0.49
+Biscuits: 38: 1.59
+Bread: 15: 2.49
+Butter: 22: 2.29
+Carrots: 45: 0.89
+Cereal: 26: 3.79
+Cheese: 12: 4.59
+Chicken Breast: 25: 6.49
+Coffee: 28: 5.49
+Cooking Oil: 19: 4.29
+Eggs: 100: 3.99
+Flour: 42: 1.09
+Frozen Pizza: 14: 3.99
+Laundry Detergent: 16: 7.49
+Milk: 20: 1.29
+Onions: 65: 0.69
+Orange Juice: 18: 2.99
+Pasta: 55: 1.39
+Potatoes: 70: 0.79
+Rice: 60: 1.79
+Salt: 80: 0.59
+Shampoo: 17: 5.99
+Soap: 32: 1.99
+Sugar: 48: 1.19
+Tea: 33: 3.19
+Tomato Sauce: 35: 1.69
+Toothpaste: 24: 2.49
+Water Bottle: 90: 0.99
+Yogurt: 40: 0.89
