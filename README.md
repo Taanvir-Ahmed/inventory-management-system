@@ -77,7 +77,9 @@ inventory-management-system/
   * Replaced `.txt` file with CSV storage
   * Added product IDs and improved functionality
 
----
+* **Version 4**
+  * Added sales and purchase history tracking
+  * Stored transactions using JSON file
 
 ## Future Improvements
 
