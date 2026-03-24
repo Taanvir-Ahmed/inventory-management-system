@@ -24,8 +24,8 @@ A beginner-friendly Python command-line project for managing store inventory. Th
 
 ## Project Structure
 
-- `inventory_manager_refined.py` → main Python program
-- `inventory_big.txt` → sample inventory data
+- `inventory_management_system.py` → main Python program
+- `inventory_data.txt` → sample inventory data
 
 ## Sample Data Format
 
@@ -40,12 +40,12 @@ Example:
 ## How to Run
 
 1. Make sure Python 3 is installed.
-2. Place `inventory_manager_refined.py` and `inventory_big.txt` in the same folder.
+2. Place `inventory_management_system.py` and `inventory_data.txt` in the same folder.
 3. Open terminal in that folder.
 4. Run:
 
 ```bash
-python inventory_manager_refined.py
+python inventory_management_system.py
 ```
 
 ## Skills Demonstrated
