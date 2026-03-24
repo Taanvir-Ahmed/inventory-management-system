@@ -1,68 +1,93 @@
 # Inventory Management System
 
-A beginner-friendly Python command-line project for managing store inventory. The program reads product data from a text file, lets the user view and update inventory, and saves changes back to the file.
+A beginner-friendly Python command-line project for managing store inventory.
+This project demonstrates file handling, object-oriented programming (OOP), and CSV data storage.
+
+---
 
 ## Features
 
-- Read inventory data from a `.txt` file
-- Display inventory in a neat table
-- Add new products
-- Update stock quantities
-- Update product prices
-- Search products by keyword
-- Show low-stock items
-- Save updated data back to file
-- Input validation and basic error handling
+* View inventory in a formatted table
+* Add new products
+* Update stock (restock and sell)
+* Search for products
+* Save and load data using CSV files
+* Input validation for safe operations
 
-## Technologies Used
-
-- Python 3
-- Text file handling
-- Dictionaries
-- Functions
-- Loops and conditionals
+---
 
 ## Project Structure
 
-- `inventory_management_system.py` → main Python program
-- `inventory_data.txt` → sample inventory data
+```
+inventory-management-system/
+├── main.py
+├── product.py
+├── inventory.py
+├── inventory_data.csv
+├── README.md
+└── .gitignore
+```
 
-## Sample Data Format
+---
 
-Each line in the text file follows this format:
+## Technologies Used
 
-`Product Name: quantity: price`
+* Python
+* Object-Oriented Programming (OOP)
+* CSV file handling
 
-Example:
-
-`Apple: 50: 0.99`
+---
 
 ## How to Run
 
-1. Make sure Python 3 is installed.
-2. Place `inventory_management_system.py` and `inventory_data.txt` in the same folder.
-3. Open terminal in that folder.
-4. Run:
+1. Navigate to the project folder:
 
-```bash
-python inventory_management_system.py
-```
+   ```
+   cd inventory
+   ```
 
-## Skills Demonstrated
+2. Run the program:
 
-This project shows:
+   ```
+   python main.py
+   ```
 
-- file reading and writing
-- working with dictionaries
-- modular programming
-- input validation
-- command-line interface design
-- problem solving with Python
+   or (Mac/Linux):
 
-## Ideas for Future Improvement
+   ```
+   python3 main.py
+   ```
 
-- convert the project to use classes
-- store data in CSV or JSON
-- add sales and purchase history
-- create a graphical user interface with Tkinter
-- connect the project to a database
+---
+
+## Project Versions
+
+* **Version 1**
+
+  * Basic command-line inventory system
+  * Used `.txt` file for data storage
+
+* **Version 2**
+
+  * Refactored into object-oriented design
+  * Introduced `Product` and `Inventory` classes
+
+* **Version 3**
+
+  * Replaced `.txt` file with CSV storage
+  * Added product IDs and improved functionality
+
+---
+
+## Future Improvements
+
+* Add sales and purchase history
+* Store transaction logs using JSON
+* Build a graphical user interface (GUI) using Tkinter
+* Connect the system to an SQLite database
+
+---
+
+## Author
+
+Tanvir Ahmed
