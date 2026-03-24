@@ -1,6 +1,7 @@
 from pathlib import Path
 from inventory import Inventory
 from product import Product
+from transactions import TransactionManager
 
 
 DATA_FILE = Path(__file__).with_name("inventory_data.csv")
@@ -19,6 +20,7 @@ def print_menu() -> None:
 7. Search product by name
 8. Show low-stock products
 9. Save inventory to CSV
+10. View transaction history
 0. Exit
 ===========================================================
 """
@@ -79,18 +81,24 @@ def update_stock_ui(inventory: Inventory) -> None:
         print("Product not found or invalid quantity.")
 
 
-def restock_ui(inventory: Inventory) -> None:
+def restock_ui(inventory: Inventory, transactions: TransactionManager) -> None:
     print("\n--- Restock Product ---")
     product_id = input("Enter product ID: ").strip()
     amount = get_non_negative_int("Enter quantity to add: ")
 
+    product = inventory.find_by_id(product_id)
+    if product is None:
+        print("Product not found.")
+        return
+
     if inventory.restock_product(product_id, amount):
+        transactions.add_transaction("purchase", product.name, amount, product.price)
         print("Product restocked successfully.")
     else:
         print("Product not found.")
 
 
-def sell_ui(inventory: Inventory) -> None:
+def sell_ui(inventory: Inventory, transactions: TransactionManager) -> None:
     print("\n--- Sell Product ---")
     product_id = input("Enter product ID: ").strip()
     amount = get_non_negative_int("Enter quantity to sell: ")
@@ -99,6 +107,7 @@ def sell_ui(inventory: Inventory) -> None:
     if product is None:
         print("Product not found.")
     elif inventory.sell_product(product_id, amount):
+        transactions.add_transaction("sale", product.name, amount, product.price)
         print("Sale completed successfully.")
     else:
         print(f"Not enough stock. Available quantity: {product.quantity}")
@@ -148,6 +157,7 @@ def show_low_stock_ui(inventory: Inventory) -> None:
 def main() -> None:
     inventory = Inventory()
     inventory.load_from_csv(str(DATA_FILE))
+    transactions = TransactionManager("transactions.json")
 
     while True:
         print_menu()
@@ -172,6 +182,8 @@ def main() -> None:
         elif choice == "9":
             inventory.save_to_csv(str(DATA_FILE))
             print(f"Inventory saved to '{DATA_FILE.name}'.")
+        elif choice == "10":
+            transactions.show_transactions()
         elif choice == "0":
             inventory.save_to_csv(str(DATA_FILE))
             print("Inventory saved. Goodbye!")
