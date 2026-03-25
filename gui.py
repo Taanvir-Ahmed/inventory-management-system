@@ -265,21 +265,22 @@ class InventoryApp:
 
     def show_reports_window(self) -> None:
         top_product, top_qty = self.reports.most_sold_product()
+
         report_text = (
-            "Inventory Business Report\n"
-            "=" * 32
-            + f"\nTotal sales revenue   : €{self.reports.total_sales_revenue():.2f}"
-            + f"\nTotal purchase value  : €{self.reports.total_purchase_value():.2f}"
-            + f"\nSales transactions    : {self.reports.sales_count()}"
-            + f"\nPurchase transactions : {self.reports.purchase_count()}"
-            + (
-                f"\nMost sold product     : {top_product} ({top_qty} units)"
-                if top_product
-                else "\nMost sold product     : No sales yet"
-            )
-            + f"\nToday's revenue       : €{self.reports.today_revenue():.2f}"
-            + "\n\nDaily Revenue\n"
-            + "-" * 32
+                "Inventory Business Report\n"
+                + "=" * 32
+                + f"\nTotal sales revenue   : €{self.reports.total_sales_revenue():.2f}"
+                + f"\nTotal purchase value  : €{self.reports.total_purchase_value():.2f}"
+                + f"\nSales transactions    : {self.reports.sales_count()}"
+                + f"\nPurchase transactions : {self.reports.purchase_count()}"
+                + (
+                    f"\nMost sold product     : {top_product} ({top_qty} units)"
+                    if top_product
+                    else "\nMost sold product     : No sales yet"
+                )
+                + f"\nToday's revenue       : €{self.reports.today_revenue():.2f}"
+                + "\n\nDaily Revenue\n"
+                + "-" * 32
         )
 
         daily = self.reports.daily_revenue()
