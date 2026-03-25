@@ -1,29 +1,66 @@
 # Inventory Management System
 
-A beginner-friendly Python command-line project for managing store inventory.
-This project demonstrates file handling, object-oriented programming (OOP), and CSV data storage.
+A Python-based inventory management application that demonstrates object-oriented programming, file handling, data analysis, and graphical user interface development.
+
+This project evolved step-by-step from a simple command-line tool into a full-featured application with reporting and a Tkinter GUI.
 
 ---
 
 ## Features
 
-* View inventory in a formatted table
+### Core Functionality
+
 * Add new products
-* Update stock (restock and sell)
-* Search for products
-* Save and load data using CSV files
-* Input validation for safe operations
+* Update stock quantity
+* Restock products
+* Sell products
+* Update product prices
+* Search products by name
+* Display inventory in a structured format
+* Low-stock alerts
+
+### Data Management
+
+* Inventory stored using CSV files
+* Transactions stored using JSON
+* Persistent data across sessions
+
+### Transaction System
+
+* Records every sale and restock
+* Stores date, type, quantity, and total value
+* View complete transaction history
+
+### Reports & Analytics
+
+* Total sales revenue
+* Total purchase value
+* Number of sales and purchase transactions
+* Most sold product
+* Daily revenue tracking
+
+### Graphical User Interface (GUI)
+
+* Built with Tkinter
+* Interactive buttons and forms
+* Inventory displayed in a table
+* Separate views for transactions and reports
 
 ---
 
 ## Project Structure
 
-```
+```id="struct01"
 inventory-management-system/
-├── main.py
-├── product.py
-├── inventory.py
-├── inventory_data.csv
+├── main.py              # Launches GUI
+├── main_cli.py          # (Optional) CLI version
+├── gui.py               # Tkinter interface
+├── product.py           # Product class
+├── inventory.py         # Inventory logic
+├── transactions.py      # Transaction management
+├── reports.py           # Business analytics
+├── inventory_data.csv   # Inventory data
+├── transactions.json    # Transaction history
 ├── README.md
 └── .gitignore
 ```
@@ -35,58 +72,85 @@ inventory-management-system/
 * Python
 * Object-Oriented Programming (OOP)
 * CSV file handling
+* JSON data storage
+* Tkinter (GUI development)
 
 ---
 
 ## How to Run
 
-1. Navigate to the project folder:
+### Run GUI version (recommended)
 
-   ```
-   cd inventory
-   ```
+```id="run01"
+python main.py
+```
 
-2. Run the program:
+or (Mac/Linux):
 
-   ```
-   python main.py
-   ```
+```id="run02"
+python3 main.py
+```
 
-   or (Mac/Linux):
+### Run CLI version (optional)
 
-   ```
-   python3 main.py
-   ```
+```id="run03"
+python main_cli.py
+```
 
 ---
 
-## Project Versions
+## Example Features in Action
+
+### Inventory Management
+
+* Add, update, and track products easily
+* Automatically saves changes to CSV
+
+### Transaction Tracking
+
+* Every sale and restock is recorded
+* Stored in JSON format for analysis
+
+### Reports
+
+* View business insights such as revenue and most sold items
+* Helps simulate real-world inventory decision making
+
+---
+
+## Project Evolution
 
 * **Version 1**
 
   * Basic command-line inventory system
-  * Used `.txt` file for data storage
+  * Used text file storage
 
 * **Version 2**
 
   * Refactored into object-oriented design
-  * Introduced `Product` and `Inventory` classes
+  * Introduced Product and Inventory classes
 
 * **Version 3**
 
-  * Replaced `.txt` file with CSV storage
-  * Added product IDs and improved functionality
+  * Switched data storage from text file to CSV
 
 * **Version 4**
-  * Added sales and purchase history tracking
-  * Stored transactions using JSON file
+
+  * Added transaction tracking using JSON
+
+* **Version 5**
+
+  * Implemented business reports and analytics
+  * Built a Tkinter graphical user interface
+
+---
 
 ## Future Improvements
 
-* Add sales and purchase history
-* Store transaction logs using JSON
-* Build a graphical user interface (GUI) using Tkinter
-* Connect the system to an SQLite database
+* Export reports to CSV or Excel
+* Add user authentication system
+* Improve GUI styling and layout
+* Deploy as a desktop application
 
 ---
 
