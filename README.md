@@ -1,8 +1,37 @@
-# Inventory Management System
+# 🛒 Inventory Management System
 
 A Python-based inventory management application that demonstrates object-oriented programming, file handling, data analysis, and graphical user interface development.
 
 This project evolved step-by-step from a simple command-line tool into a full-featured application with reporting and a Tkinter GUI.
+
+---
+
+## Screenshots
+
+### Main Interface
+
+![Main Window](screenshots/main_window.png)
+
+### Transactions View
+
+![Transactions](screenshots/transactions.png)
+
+### Reports Dashboard
+
+![Reports](screenshots/reports.png)
+
+---
+
+## Demo Overview
+
+This application simulates a real-world inventory management workflow:
+
+* Users can add and manage products through a graphical interface
+* Stock levels are updated automatically when items are sold or restocked
+* Every transaction is recorded and stored for analysis
+* The system generates business reports such as total revenue, most sold product, and daily sales
+
+The project demonstrates how core programming concepts can be applied to build a practical, user-friendly application.
 
 ---
 
@@ -50,7 +79,7 @@ This project evolved step-by-step from a simple command-line tool into a full-fe
 
 ## Project Structure
 
-```id="struct01"
+```
 inventory-management-system/
 ├── main.py              # Launches GUI
 ├── main_cli.py          # (Optional) CLI version
@@ -81,40 +110,21 @@ inventory-management-system/
 
 ### Run GUI version (recommended)
 
-```id="run01"
+```
 python main.py
 ```
 
 or (Mac/Linux):
 
-```id="run02"
+```
 python3 main.py
 ```
 
 ### Run CLI version (optional)
 
-```id="run03"
+```
 python main_cli.py
 ```
-
----
-
-## Example Features in Action
-
-### Inventory Management
-
-* Add, update, and track products easily
-* Automatically saves changes to CSV
-
-### Transaction Tracking
-
-* Every sale and restock is recorded
-* Stored in JSON format for analysis
-
-### Reports
-
-* View business insights such as revenue and most sold items
-* Helps simulate real-world inventory decision making
 
 ---
 
