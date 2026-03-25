@@ -2,7 +2,6 @@ from pathlib import Path
 from inventory import Inventory
 from product import Product
 from transactions import TransactionManager
-from reports import ReportManager
 
 
 DATA_FILE = Path(__file__).with_name("inventory_data.csv")
@@ -22,8 +21,6 @@ def print_menu() -> None:
 8. Show low-stock products
 9. Save inventory to CSV
 10. View transaction history
-11. Show summary report
-12. Show daily revenue report
 0. Exit
 ===========================================================
 """
@@ -161,7 +158,6 @@ def main() -> None:
     inventory = Inventory()
     inventory.load_from_csv(str(DATA_FILE))
     transactions = TransactionManager("transactions.json")
-    reports = ReportManager(transactions)
 
     while True:
         print_menu()
@@ -174,9 +170,9 @@ def main() -> None:
         elif choice == "3":
             update_stock_ui(inventory)
         elif choice == "4":
-            restock_ui(inventory, transactions)
+            restock_ui(inventory)
         elif choice == "5":
-            sell_ui(inventory, transactions)
+            sell_ui(inventory)
         elif choice == "6":
             update_price_ui(inventory)
         elif choice == "7":
@@ -188,16 +184,12 @@ def main() -> None:
             print(f"Inventory saved to '{DATA_FILE.name}'.")
         elif choice == "10":
             transactions.show_transactions()
-        elif choice == "11":
-            reports.print_summary_report()
-        elif choice == "12":
-            reports.print_daily_revenue_report()
         elif choice == "0":
             inventory.save_to_csv(str(DATA_FILE))
             print("Inventory saved. Goodbye!")
             break
         else:
-            print("Invalid choice. Please enter a number from 0 to 12.")
+            print("Invalid choice. Please enter a number from 0 to 9.")
 
 
 if __name__ == "__main__":
